@@ -4,7 +4,7 @@ import com.sda.corneliacalin.webshop.model.Account;
 import com.sda.corneliacalin.webshop.repository.AccountRepository;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+
 
 @Service
 public class CustomerService {
@@ -19,8 +19,8 @@ public class CustomerService {
             accountRepository.save(account);
 
     }
-    public List<Account> getCustomerAccount(){
-            return accountRepository.getAll();
+    public Iterable<Account> getCustomerAccount(){
+            return accountRepository.findAll();
     }
 
 }
