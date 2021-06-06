@@ -2,6 +2,7 @@ package com.sda.corneliacalin.webshop;
 
 import com.sda.corneliacalin.webshop.model.Account;
 import com.sda.corneliacalin.webshop.service.CustomerService;
+import com.sda.corneliacalin.webshop.service.MailService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -13,6 +14,9 @@ public class WebshopApplication implements CommandLineRunner {   // pt rulare li
 
     @Autowired
     private CustomerService customerService;	// autoinjectare
+
+    @Autowired
+    private MailService mailService;
 
     public static void main(String[] args) {
 
@@ -30,7 +34,8 @@ public class WebshopApplication implements CommandLineRunner {   // pt rulare li
 
 		customerService.getCustomerAccount().forEach(System.out::println);
 
-
+    mailService.sendMail("corneliacalin@yahoo.com","calincornelia@gmail.com", "test1",
+            "acesta este corpul mailului");
 
     }
 }
