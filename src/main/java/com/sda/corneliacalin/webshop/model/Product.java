@@ -1,30 +1,40 @@
 package com.sda.corneliacalin.webshop.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.*;
 
 @Entity
-@Table(name="product")
+@Table(name = "product")
 public class Product {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
-    @Column(name="name")
+    @NotBlank
+    @Size(min = 5, max = 1000)
+    @Column(name = "name")
     private String name;
 
-    @Column(name="description")
+    @NotBlank
+    @Size(min = 5)
+    @Column(name = "description")
     private String description;
 
-    @Column(name="price")
+
+    @Positive
+    @Column(name = "price")
     private Double price;
 
-    @Column(name="currency")
+    @NotBlank
+    @Pattern(regexp = "[A-Z][A-Z][A-Z]")
+    @Column(name = "currency")
     private String currency;
 
+   @NotNull
     @Enumerated(EnumType.STRING)
-    @Column(name="category")
+    @Column(name = "category")
     private ProductCategory category;
 
     public Product(String name, String description, Double price, String currency, ProductCategory category) {
