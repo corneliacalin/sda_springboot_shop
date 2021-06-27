@@ -1,4 +1,4 @@
-package com.sda.denisbalaceanu.spring.mvc.security.constraint;
+package com.sda.corneliacalin.webshop.constraint;
 
 import javax.validation.Payload;
 import javax.validation.Constraint;

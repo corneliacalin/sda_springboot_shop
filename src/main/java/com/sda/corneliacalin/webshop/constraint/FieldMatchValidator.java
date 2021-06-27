@@ -1,9 +1,14 @@
-package com.sda.denisbalaceanu.spring.mvc.security.constraint;
+package com.sda.corneliacalin.webshop.constraint;
+
+
+
+import org.apache.commons.beanutils.BeanUtils;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import org.apache.commons.beanutils.BeanUtils;
+
+
 
 public class FieldMatchValidator implements ConstraintValidator<FieldMatch, Object>
 {
