@@ -1,0 +1,19 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;" >
+    <div><a href="" class="navbar-brand">SDA</a></div>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+      <ul class="navbar-nav mr-auto">
+        <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/welcome/javainuse" class="nav-link">Home</a></li>
+        <li><a *ngIf="loginService.isUserLoggedIn()" routerLink="/books" class="nav-link">Books</a></li>
+      </ul>
+
+      <form class="form-inline my-2 my-lg-0">
+            <a class="nav-link" *ngIf="!loginService.isUserLoggedIn()" routerLink="/login">Login</a>
+            <a class="nav-link" *ngIf="loginService.isUserLoggedIn()" routerLink="/logout">LogOut</a>
+            <a class="nav-link" *ngIf="!loginService.isUserLoggedIn()" routerLink="/register">Register</a>
+      </form>
+    </div>
+  </nav>
+</header>
